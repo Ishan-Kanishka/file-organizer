@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Organizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📁 File Organizer</h1>
+        
+        <div class="controls">
+            <div class="folder-selection">
+                <label for="folder-path">Selected Folder:</label>
+                <input type="text" id="folder-path" placeholder="No folder selected" readonly>
+                <button id="select-folder-btn">Select Folder</button>
+            </div>
+            
+            <button id="organize-btn" disabled>Start Organizing</button>
+        </div>
+        
+        <div class="log-section">
+            <h3>Log Output:</h3>
+            <div id="log-area">
+                <p class="log-message">Ready to organize files. Select a folder to begin.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="renderer.js"></script>
+</body>
+</html>
+

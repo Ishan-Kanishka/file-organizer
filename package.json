@@ -1,0 +1,65 @@
+{
+  "name": "file-organizer",
+  "version": "1.0.0",
+  "description": "A simple file organizer that categorizes files by extension",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "organize": "node organizer.js",
+    "build": "electron-builder",
+    "dist": "electron-builder --publish=never",
+    "dist:win": "electron-builder --win --publish=never",
+    "dist:mac": "electron-builder --mac --publish=never",
+    "dist:linux": "electron-builder --linux --publish=never"
+  },
+  "keywords": [
+    "file-organizer",
+    "file-management",
+    "automation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "build": {
+    "appId": "com.fileorganizer.app",
+    "productName": "File Organizer",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/**/*",
+      "!dist/**/*",
+      "!*.log",
+      "!messy-folder/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12",
+    "electron-packager": "^17.1.2"
+  }
+}
